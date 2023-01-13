@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Array",
+      "day": "Monday",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "forEach",
+      "day": "Friday",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "methods",
+      "day": "Tuesday",
+      "reminder": true
+    },
+    {
+      "id": 4,
+      "text": "like",
+      "day": "Sunday",
+      "reminder": true
+    },
+    {
+      "text": "Dynamic Task",
+      "day": "Monday",
+      "reminder": true,
+      "id": 5
+    }
+  ]
+}
