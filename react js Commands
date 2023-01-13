@@ -1,0 +1,70 @@
+Create component
+Command : rafce
+
+Create pure component
+Command : rpce
+Create class component
+Command : rce
+
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd react-task-tracker
+  npm start
+
+to install Router in your project
+
+   npm install react-router-dom
+
+
+npm install react-icons
+
+
+To address all issues (including breaking changes), 
+run:  npm audit fix --force
+
+to Create build
+
+  npm run build
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+json server
+URL : https://www.npmjs.com/package/json-server
+
+Install JSON Server
+Global
+npm install -g json-server
+
+npm install json-server
+
+start json server
+npm run server
+
+Routing
+npm install react-router -dom
+
+
+
