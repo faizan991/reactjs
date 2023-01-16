@@ -2,6 +2,9 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 //import { BrowserRouter as BRouter, Route } from 'react-router-dom';
 import { BrowserRouter as BRouter, Routes, Route } from 'react-router-dom';
+import {AuthProvider} from './components/auth';
+
+import RequireAuth from './components/RequireAuth';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -10,6 +13,9 @@ import AddTask from './components/AddTask';
 import Test from './components/test';
 import About from './components/About';
 import Home from './components/Home';
+import Profile from './components/profile';
+import Login from './components/Login';
+
 import NotFound from './components/NotFound';
 import NestedRoute from './components/nestedRoute';
 
@@ -83,32 +89,32 @@ function App() {
 
   return (
     <div className="container">
+      <AuthProvider>
 
-      
-
-      <Header title={'Task Tracker'} onAdd={() => setShowAddTask(!showAddTask)} showTask={showAddTask} />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Task To view'}
-      <Test />
-      <BRouter>
-        <Routes>
-            <Route path='/' element= {<About />} />
-            <Route path='about' element= {<About />} />
-            <Route path='lazy' element= { <React.Suspense fallback='Loading........'> <Lazy /> </React.Suspense> } />
+        <Header title={'Task Tracker'} onAdd={() => setShowAddTask(!showAddTask)} showTask={showAddTask} />
+        {showAddTask && <AddTask onAdd={addTask} />}
+        {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Task To view'}
+        <Test />
+        <BRouter>
+          <Routes>
+            <Route path='/' element={<About />} />
+            <Route path='about' element={<About />} />
+            <Route path='lazy' element={<React.Suspense fallback='Loading........'> <Lazy /> </React.Suspense>} />
+            <Route path='profile' element={<RequireAuth><Profile /></RequireAuth>} />
+            <Route path='login' element={<Login />} />
 
             <Route path='home' element={<Home />} >
               <Route index element={<NestedRoute />} />
               <Route path='nested-route' element={<NestedRoute />} />
-
               <Route path=':dynamic' element={<NestedRoute />} /> {/* this is Dynamic Routes  */}
-
             </Route>
 
-            <Route path='*' element= {<NotFound/>} />
-        </Routes>
-        <Footer />
-      </BRouter>
 
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </BRouter>
+      </AuthProvider>
     </div>
   );
 }

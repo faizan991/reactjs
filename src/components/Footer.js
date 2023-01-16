@@ -1,8 +1,11 @@
 import React from 'react'
 //import { Link , NavLink } from 'react-router-dom';
 import { NavLink , useNavigate } from 'react-router-dom';
+import {useAuth} from './auth'
+
 const Footer = () => {
   const navigate = useNavigate()
+  const  auth = useAuth()
   return (
     <footer>
 
@@ -20,6 +23,12 @@ const Footer = () => {
           <td> <NavLink to='home'>Home</NavLink>  </td>
           <td> <NavLink to='about'>About</NavLink>  </td>
           <td> <NavLink to='lazy'>Lazy</NavLink>  </td>
+          <td> <NavLink to='profile'>Profile</NavLink>  </td>
+          
+          {!auth.user && (
+            <td> <NavLink to='login'>Login</NavLink>  </td>
+          )}
+
           {/* <td> <button onClick={() => {navigate('about')}}>UseNavigate to about</button> </td> */}
           <td> <button onClick={() => {navigate('about' , {replace : true} )}}>UseNavigate to about with replace navigation history</button> </td>
         </tr>
