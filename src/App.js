@@ -15,6 +15,7 @@ import About from './components/About';
 import Home from './components/Home';
 import Profile from './components/profile';
 import Login from './components/Login';
+import LIstPosts from './components/LIstPosts';
 
 import NotFound from './components/NotFound';
 import NestedRoute from './components/nestedRoute';
@@ -102,7 +103,8 @@ function App() {
             <Route path='lazy' element={<React.Suspense fallback='Loading........'> <Lazy /> </React.Suspense>} />
             <Route path='profile' element={<RequireAuth><Profile /></RequireAuth>} />
             <Route path='login' element={<Login />} />
-
+            <Route path='list-posts' element={<LIstPosts />} />
+            
             <Route path='home' element={<Home />} >
               <Route index element={<NestedRoute />} />
               <Route path='nested-route' element={<NestedRoute />} />

@@ -18,7 +18,7 @@ export class refsComponent extends Component {
   render() {
     return (
       <div>
-         <input type="text" ref={this.inputRef}  />
+         <input type="text" ref={this.inputRef} />
       </div>
     )
   }

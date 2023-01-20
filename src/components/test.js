@@ -51,7 +51,7 @@ export class test extends Component {
         event.preventDefault()
         let ValueSubmit = "";
 
-        if(this.state.textValue == "") {
+        if(this.state.textValue === "") {
             ValueSubmit = "Default"
         } else {
             ValueSubmit = this.state.textValue
